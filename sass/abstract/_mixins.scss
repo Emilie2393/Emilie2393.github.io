@@ -12,3 +12,13 @@
     display: flex;
     flex-wrap: wrap;
 }
+
+@mixin Center_Cards{
+    margin: 15px;
+    overflow: hidden;
+    background-color: white;
+    flex-grow: 1;
+    width: 265px;
+    border-radius: 15px;
+    background-color: white;
+}

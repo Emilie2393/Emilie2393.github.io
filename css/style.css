@@ -1,9 +1,8 @@
-* {
-  box-sizing: border-box;
-}
-
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin: 0;
+  box-sizing: border-box;
+  width: auto;
 }
 
 .Logo img {
@@ -51,14 +50,42 @@ header {
   align-items: center;
   flex-direction: column;
   width: 100%;
-  padding: 0 20px 0 20px;
   background-color: lightgray;
 }
 .SearchPart__Hook__Explore {
   margin: 10px 0 10px 0;
 }
 
-.ExplainPart__Flex {
+.ExplainPart__Cards {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  width: 70%;
+  background-color: lightgray;
+  margin-bottom: 10px;
+}
+
+.ResultsPart {
+  background-color: lightgray;
+}
+.ResultsPart__Cards {
+  margin: 15px;
+  overflow: hidden;
+  background-color: white;
+  flex-grow: 1;
+  width: 265px;
+  border-radius: 15px;
+  background-color: white;
+}
+.ResultsPart__Cards img {
+  max-width: 100%;
+}
+
+.Flex {
   display: flex;
   flex-wrap: wrap;
   text-align: center;

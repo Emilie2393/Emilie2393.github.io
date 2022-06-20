@@ -37,6 +37,8 @@ header {
   flex-direction: row;
   width: 100%;
   margin-top: 10px;
+  padding: 10px 0 10px 0;
+  border-top: solid 2px lightgrey;
   background-color: darkgray;
 }
 .SearchPart__Localisation__Paris {
@@ -51,11 +53,37 @@ header {
   flex-direction: column;
   width: 100%;
   background-color: lightgray;
+  margin-bottom: 10px;
+}
+.SearchPart__Hook h1 {
+  margin: 20px 0 10px 0;
 }
 .SearchPart__Hook__Explore {
-  margin: 10px 0 10px 0;
+  margin: 20px 0 30px 0;
+  background-color: #FF79DA;
+  padding: 8px 13px 10px 13px;
+  border-radius: 15px;
+  color: white;
 }
 
+.ExplainPart__Center {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.ExplainPart__Number {
+  background-color: #9356DC;
+  position: relative;
+  left: 10px;
+  padding: 3px 8px 3px 7px;
+  border-radius: 50%;
+}
 .ExplainPart__Cards {
   display: flex;
   flex-wrap: wrap;
@@ -64,9 +92,12 @@ header {
   align-items: center;
   flex-direction: row;
   width: 100%;
-  width: 70%;
+  padding: 18px 24px 18px 24px;
   background-color: lightgray;
-  margin-bottom: 10px;
+  font-weight: bold;
+  border-radius: 15px;
+  width: 40%;
+  background-color: lightgray;
 }
 
 .ResultsPart {

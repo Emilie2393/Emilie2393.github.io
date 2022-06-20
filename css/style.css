@@ -39,10 +39,11 @@ header {
   margin-top: 10px;
   padding: 10px 0 10px 0;
   border-top: solid 2px lightgrey;
-  background-color: darkgray;
+  background-color: rgb(234, 234, 234);
 }
 .SearchPart__Localisation__Paris {
   margin-left: 10px;
+  font-weight: 500;
 }
 .SearchPart__Hook {
   display: flex;
@@ -52,7 +53,7 @@ header {
   align-items: center;
   flex-direction: column;
   width: 100%;
-  background-color: lightgray;
+  background-color: rgb(246, 246, 246);
   margin-bottom: 10px;
 }
 .SearchPart__Hook h1 {
@@ -63,10 +64,11 @@ header {
 }
 .SearchPart__Hook__Explore {
   margin: 20px 0 30px 0;
-  background-color: #FF79DA;
-  padding: 8px 13px 10px 13px;
+  background: linear-gradient(to bottom right, #FF79DA, #9356DC);
+  padding: 8px 15px 10px 15px;
   border-radius: 18px;
   color: white;
+  box-shadow: 0px 5px 10px lightgray;
 }
 
 h2 {
@@ -113,19 +115,21 @@ h2 {
   padding: 18px 24px 18px 24px;
   background-color: lightgray;
   font-weight: bold;
-  border-radius: 18px;
+  border-radius: 20px;
+  box-shadow: 0px 5px 10px lightgray;
   width: 75%;
   margin-right: 15px;
-  background-color: lightgray;
+  background-color: rgb(246, 246, 246);
   justify-content: flex-start;
+  height: 35px;
 }
 .ExplainPart__Cards i {
-  margin-right: 20px;
+  margin: 0 26px 0 11px;
   color: grey;
 }
 
 .ResultsPart {
-  background-color: lightgray;
+  background-color: rgb(246, 246, 246);
 }
 .ResultsPart__Cards {
   margin: 15px;

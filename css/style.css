@@ -56,14 +56,32 @@ header {
   margin-bottom: 10px;
 }
 .SearchPart__Hook h1 {
-  margin: 20px 0 10px 0;
+  margin: 20px 50px 10px 50px;
+}
+.SearchPart__Hook__Text {
+  margin: 0 50px 0 50px;
 }
 .SearchPart__Hook__Explore {
   margin: 20px 0 30px 0;
   background-color: #FF79DA;
   padding: 8px 13px 10px 13px;
-  border-radius: 15px;
+  border-radius: 18px;
   color: white;
+}
+
+h2 {
+  margin: 0 0 15px 10px;
+  padding-top: 20px;
+}
+
+.Flex {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
 }
 
 .ExplainPart__Center {
@@ -74,13 +92,12 @@ header {
   align-items: center;
   flex-direction: row;
   width: 100%;
-  align-items: center;
   margin-bottom: 15px;
 }
 .ExplainPart__Number {
   background-color: #9356DC;
   position: relative;
-  left: 10px;
+  left: 13px;
   padding: 3px 8px 3px 7px;
   border-radius: 50%;
 }
@@ -95,9 +112,14 @@ header {
   padding: 18px 24px 18px 24px;
   background-color: lightgray;
   font-weight: bold;
-  border-radius: 15px;
-  width: 40%;
+  border-radius: 18px;
+  width: 75%;
+  margin-right: 15px;
   background-color: lightgray;
+  justify-content: flex-start;
+}
+.ExplainPart__Cards i {
+  margin-right: 20px;
 }
 
 .ResultsPart {
@@ -109,21 +131,11 @@ header {
   background-color: white;
   flex-grow: 1;
   width: 265px;
-  border-radius: 15px;
+  border-radius: 18px;
   background-color: white;
 }
 .ResultsPart__Cards img {
   max-width: 100%;
-}
-
-.Flex {
-  display: flex;
-  flex-wrap: wrap;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 100%;
 }
 
 /*# sourceMappingURL=style.css.map */

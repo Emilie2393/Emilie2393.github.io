@@ -35,37 +35,55 @@ header{
         background-color: lightgray;
         margin-bottom: 10px;
         h1{
-            margin: 20px 0 10px 0;
+            margin: 20px 50px 10px 50px;
+        }
+        &__Text{
+            margin: 0 50px 0 50px;
         }
         &__Explore{
             margin: 20px 0 30px 0;
             background-color: $secondary-color;
             padding: 8px 13px 10px 13px;
-            border-radius: 15px;
+            border-radius: 18px;
             color: white;
+            
         }
     }
 
 }
 
+h2{
+    margin: 0 0 15px 10px;
+    padding-top: 20px;
+
+}
+
+.Flex{
+    @include center(column)
+}
+
 .ExplainPart{
     &__Center{
         @include center(row);
-        align-items: center;
         margin-bottom: 15px;
     }
     &__Number{
         background-color: $primary-color;
-        position: relative;
-        left: 10px;
+        position:relative;
+        left: 13px;
         padding: 3px 8px 3px 7px;
         border-radius: 50%;
     }
     &__Cards{
         @include center(row);
         @include Button;
-        width: 40%;
+        width:75%;
+        margin-right: 15px;
         background-color: lightgray;
+        justify-content:flex-start;
+        i{
+            margin-right: 20px;
+        }
     }
 }
 
@@ -79,8 +97,6 @@ header{
     }
     }
 
-.Flex{
-    @include center(column)
-}
+
 
 

@@ -6,7 +6,7 @@ body {
 }
 
 .Logo img {
-  height: 35px;
+  height: 30px;
 }
 
 header {
@@ -98,8 +98,9 @@ h2 {
   background-color: #9356DC;
   position: relative;
   left: 13px;
-  padding: 3px 8px 3px 7px;
+  padding: 2px 8px 2px 7px;
   border-radius: 50%;
+  color: white;
 }
 .ExplainPart__Cards {
   display: flex;
@@ -120,6 +121,7 @@ h2 {
 }
 .ExplainPart__Cards i {
   margin-right: 20px;
+  color: grey;
 }
 
 .ResultsPart {
@@ -130,12 +132,26 @@ h2 {
   overflow: hidden;
   background-color: white;
   flex-grow: 1;
-  width: 265px;
+  width: 85%;
   border-radius: 18px;
   background-color: white;
+  text-align: left;
+}
+.ResultsPart__Cards__Image {
+  overflow: hidden;
 }
 .ResultsPart__Cards img {
-  max-width: 100%;
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  object-position: bottom;
+}
+.ResultsPart__Cards__Name {
+  font-weight: bold;
+  margin: 10px 0 0 10px;
+}
+.ResultsPart__Cards__Location {
+  margin: 0 0 10px 10px;
 }
 
 /*# sourceMappingURL=style.css.map */

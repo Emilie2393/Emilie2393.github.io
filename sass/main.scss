@@ -10,7 +10,7 @@ body{
 
 
 .Logo img{
-    height: 35px;
+    height: 30px;
 }
 
 header{
@@ -71,8 +71,9 @@ h2{
         background-color: $primary-color;
         position:relative;
         left: 13px;
-        padding: 3px 8px 3px 7px;
+        padding: 2px 8px 2px 7px;
         border-radius: 50%;
+        color: white;
     }
     &__Cards{
         @include center(row);
@@ -83,6 +84,7 @@ h2{
         justify-content:flex-start;
         i{
             margin-right: 20px;
+            color: grey;
         }
     }
 }
@@ -91,8 +93,22 @@ h2{
     background-color: lightgray;
     &__Cards{
         @include Center_Cards;
+        text-align: left;
+        &__Image{
+            overflow: hidden;
+        }
         & img{
-            max-width: 100%;
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            object-position:bottom;
+        }
+        &__Name{
+            font-weight: bold;
+            margin: 10px 0 0 10px;
+        }
+        &__Location{
+            margin: 0 0 10px 10px;
         }
     }
     }

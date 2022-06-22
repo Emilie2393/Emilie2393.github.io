@@ -141,6 +141,8 @@ h2 {
   text-align: left;
 }
 .ResultsPart__Cards__Image {
+  position: relative;
+  height: 200px;
   overflow: hidden;
 }
 .ResultsPart__Cards img {
@@ -148,6 +150,7 @@ h2 {
   height: 200px;
   object-fit: cover;
   object-position: 0% 65%;
+  position: absolute;
 }
 .ResultsPart__Cards__Name {
   font-weight: bold;
@@ -163,17 +166,20 @@ h2 {
   left: 80%;
   top: 20%;
 }
-
-.Column {
+.ResultsPart__Cards__New {
+  position: absolute;
+  background-color: rgb(153, 226, 208);
+  right: 20px;
+  top: 20px;
+}
+.ResultsPart__Cards__Column {
   display: flex;
   flex-wrap: wrap;
 }
-
-.Right {
+.ResultsPart__Cards__Column__Right {
   width: 50%;
 }
-
-.Left {
+.ResultsPart__Cards__Column__Left {
   width: 50%;
 }
 

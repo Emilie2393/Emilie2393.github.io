@@ -98,6 +98,8 @@ h2{
         @include Center_Cards;
         text-align: left;
         &__Image{
+            position: relative;
+            height: 200px;
             overflow: hidden;
         }
         & img{
@@ -105,15 +107,15 @@ h2{
             height: 200px;
             object-fit: cover;
             object-position: 0% 65%;
+            position: absolute;  
         }
+        
         &__Name{
             font-weight: bold;
-            margin: 10px 0 0 10px;
-            
+            margin: 10px 0 0 10px;  
         }
         &__Location{
             margin: 0 0 10px 10px;
-            
         }
         &__Icon{
             color: grey;
@@ -121,24 +123,26 @@ h2{
             position: relative;
             left: 80%;
             top: 20%;
+        }
+        &__New{
+            position: absolute;
+            background-color: $new-color;
+            right: 20px;
+            top:20px;
+        }
 
+        &__Column{
+            display: flex;
+            flex-wrap: wrap;
+            &__Right{
+                width: 50%;
+            }
+            &__Left{
+                width: 50%;
+            }
         }
     }
     }
-
-.Column{
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.Right{
-    width: 50%;
-}
-
-.Left{
-    width: 50%;
-}
-
 
 
 

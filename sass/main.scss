@@ -65,6 +65,7 @@ h2{
 }
 
 .ExplainPart{
+    
     &__Center{
         @include center(row);
         margin-bottom: 15px;
@@ -89,8 +90,24 @@ h2{
             margin: 0 26px 0 11px;
             color: grey;
         }
+        &3{
+            @include center(row);
+            @include Button;
+            width:75%;
+            margin-right: 15px;
+            background-color: $select-color;
+            justify-content:flex-start;
+            height: 35px;
+            i{
+                margin: 0 26px 0 11px;
+                color: grey;
+
+        }
+        
     }
 }
+}
+
 
 .ResultsPart{
     background-color: $back-color;
@@ -121,14 +138,21 @@ h2{
             color: grey;
             font-size: 1.3em;
             position: relative;
-            left: 80%;
-            top: 20%;
+            text-align: right;
+            right: 20px;
+            top: 20%; 
+            & i{
+                color:red;
+                
+            }   
         }
         &__New{
             position: absolute;
             background-color: $new-color;
+            padding: 6px 14px 6px 14px;
             right: 20px;
             top:20px;
+            font-size: 0.9em;
         }
 
         &__Column{
@@ -142,7 +166,8 @@ h2{
             }
         }
     }
-    }
+}
+    
 
 footer{
     background-color: $footer-color;

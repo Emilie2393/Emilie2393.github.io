@@ -148,11 +148,15 @@ h2 {
 }
 .ExplainPart__Cards3 i {
   margin: 0 26px 0 11px;
-  color: grey;
+  color: #9356DC;
 }
 
 .ResultsPart {
   background-color: rgb(246, 246, 246);
+}
+.ResultsPart a {
+  text-decoration: none;
+  color: black;
 }
 .ResultsPart__Cards {
   margin: 15px;
@@ -190,9 +194,6 @@ h2 {
   right: 20px;
   top: 20%;
 }
-.ResultsPart__Cards__Icon i {
-  color: red;
-}
 .ResultsPart__Cards__New {
   position: absolute;
   background-color: rgb(153, 226, 208);
@@ -212,6 +213,19 @@ h2 {
   width: 50%;
 }
 
+.Column {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Right {
+  width: 50%;
+}
+
+.Left {
+  width: 50%;
+}
+
 footer {
   background-color: rgb(53, 53, 53);
 }
@@ -223,24 +237,69 @@ footer {
   font-size: 1.2em;
 }
 
-.Footer__Part {
+.FooterPart {
   color: white;
   padding: 5px 0px 15px 20px;
   display: flex;
   flex-direction: column;
   row-gap: 6px;
 }
-.Footer__Part__Align {
+.FooterPart__Align {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
 }
-.Footer__Part__Icon1 {
+.FooterPart__Icon1 {
   width: 25px;
 }
-.Footer__Part__Icon2 {
+.FooterPart__Icon2 {
   font-size: 0.8em;
   width: 25px;
+}
+
+.Image img {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.Menu {
+  background-color: rgb(246, 246, 246);
+  border-radius: 30px 30px 0 0;
+  padding: 20px 0 20px 0;
+  position: relative;
+  bottom: 60px;
+}
+.Menu__Title {
+  font-family: "Shrikhand", cursive;
+  font-size: 1.5em;
+  width: 95%;
+  margin: auto;
+  font-weight: normal;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.Menu__Title i {
+  margin-right: 15px;
+}
+.Menu__Starters {
+  width: 95%;
+  margin: auto;
+}
+.Menu__Starters__Subtitles {
+  margin: 0;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  font-weight: normal;
+  font-size: 1.1em;
+  width: 40px;
+  border-bottom: 3px #99E2D0 solid;
+}
+.Menu__Starters__Cards {
+  background-color: white;
+  border-radius: 15px;
+  padding: 11px;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   font-family: "Roboto", sans-serif;
   margin: 0;
@@ -213,19 +214,6 @@ h2 {
   width: 50%;
 }
 
-.Column {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.Right {
-  width: 50%;
-}
-
-.Left {
-  width: 50%;
-}
-
 footer {
   background-color: rgb(53, 53, 53);
 }
@@ -257,10 +245,42 @@ footer {
   width: 25px;
 }
 
+/* Page 1 - La palette du Goût ----------------------------------------------------------------------------    */
 .Image img {
   height: 300px;
   width: 100%;
   object-fit: cover;
+}
+
+.Column {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+}
+.Column:hover > .Right {
+  transform: translate(-10%);
+}
+.Column:hover > .Right > .Menu__Dishes__Cards__Icone {
+  opacity: 1;
+  background-color: #99E2D0;
+}
+
+.Right {
+  width: 20%;
+  height: 100%;
+  position: relative;
+  right: 0;
+  display: flex;
+  justify-content: end;
+  transform: translate(0);
+  transition: transform 3s;
+}
+
+.Left {
+  width: 80%;
+  height: 100%;
 }
 
 .Menu {
@@ -283,11 +303,11 @@ footer {
 .Menu__Title i {
   margin-right: 15px;
 }
-.Menu__Starters {
+.Menu__Dishes {
   width: 95%;
   margin: auto;
 }
-.Menu__Starters__Subtitles {
+.Menu__Dishes__Subtitles {
   margin: 0;
   margin-bottom: 15px;
   padding-bottom: 5px;
@@ -296,10 +316,33 @@ footer {
   width: 40px;
   border-bottom: 3px #99E2D0 solid;
 }
-.Menu__Starters__Cards {
+.Menu__Dishes__Cards {
   background-color: white;
   border-radius: 15px;
-  padding: 11px;
+  line-height: 20px;
+  margin-bottom: 15px;
+  width: 100%;
+  display: flex;
+}
+.Menu__Dishes__Cards__Name {
+  font-weight: bold;
+}
+.Menu__Dishes__Cards__Details {
+  font-size: 0.9em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.Menu__Dishes__Cards__Price {
+  font-weight: bold;
+  margin: 30px 15px 0 0;
+}
+.Menu__Dishes__Cards__Icone {
+  padding: 25px 10px 15px 10px;
+  position: relative;
+  right: -10px;
+  transform: translate(2%);
+  transition: transform 3s;
+  opacity: 0;
 }
 
 /*# sourceMappingURL=style.css.map */

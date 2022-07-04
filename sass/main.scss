@@ -15,13 +15,14 @@ body{
 
 header{
     @include center(column);
+    background-color: white;
+    padding-bottom: 10px;
 }
 
 .SearchPart{
     @include center(column);
     &__Localisation{
         @include center(row);
-        margin-top: 10px;
         padding: 10px 0 10px 0;
         border-top: solid 2px lightgrey;
         background-color: $search-color;
@@ -48,6 +49,13 @@ header{
             border-radius: 18px;
             color: white;
             box-shadow: 0px 5px 10px lightgray;
+            &:hover{
+                $primary-color: lighten( #9356DC, 10);
+                $secondary-color: lighten( #FF79DA, 10);
+                background: linear-gradient(to bottom right, $secondary-color,$primary-color);
+                box-shadow: 0px 7px 12px grey;
+
+            }
             
         }
     }
@@ -155,6 +163,10 @@ h2{
             right: 20px;
             top:20px;
             font-size: 0.9em;
+            &:hover{
+                $new-color: lighten($new-color, 10);
+                background-color: $new-color;
+            }
         }
 
         &__Column{
@@ -207,12 +219,15 @@ footer{
 
 /* Page 1 - La palette du Goût ----------------------------------------------------------------------------    */
 
-    
+body{
+    background-color: $back-color;
+}
 
 .Image img{
     height: 300px;
     width: 100%;
     object-fit: cover;
+    
 }
 
 .Column{
@@ -221,11 +236,12 @@ footer{
     height: 100%;
     align-items: center;
     &:hover >.Right{
-        transform: translate(-10%);
+        transform: translate(-40px);
         
         >.Menu__Dishes__Cards__Icone{
             opacity: 1;
             background-color: $third-color;
+            color: white;
         }
     }
 
@@ -235,26 +251,29 @@ footer{
 .Right{
     width: 20%;
     height: 100%;
-    position: relative;
-    right: 0;
     display: flex;
     justify-content: end;
+    background-color: white;
     transform:translate(0);
-    transition: transform 3s;
+    transition: transform 1s;
     
 }
 
 .Left{
     width: 80%;
     height: 100%;
+    
+    
 }
 
 .Menu{
     background-color: $back-color;
     border-radius: 30px 30px 0 0;
-    padding: 20px 0 20px 0;
+    padding-top: 20px;
     position: relative;
-    bottom: 60px;
+    bottom: 50px;
+    @include align;
+    justify-content: center;
     &__Title{
         font-family:'Shrikhand', cursive;
         font-size: 1.5em;
@@ -287,32 +306,51 @@ footer{
             line-height: 20px;
             margin-bottom: 15px;
             width: 100%;
-            display: flex;           
+            display: flex;  
+            overflow: hidden;        
         
             &__Name{
                 font-weight: bold;
+                padding-left: 10px;
             }
             &__Details{
                 font-size: 0.9em;
                 overflow: hidden;
                 text-overflow: ellipsis;
+                white-space: nowrap;
+                padding-left: 10px;
             }
             &__Price{
                 font-weight: bold;
-                margin: 30px 15px 0 0;
+                margin: 30px 0 0 0;
+                position: relative;
+                right: -30px;
                 
             }
-            &__Icone{
-                padding: 25px 10px 15px 10px;
+            &__Icone {
+                padding: 23px 25px 17px 23px;
                 position: relative;
-                right: -10px;
-                transform:translate(2%);
-                transition: transform 3s;
+                right: -40px;
+                transform:translate(0);
+                transition: transform 1s;
                 opacity: 0;
 
             }
             
         }
+        }
+        &__Command{
+            margin: 20px 0 30px 0;
+            background: linear-gradient(to bottom right, $secondary-color,$primary-color);
+            padding: 8px 15px 10px 15px;
+            border-radius: 18px;
+            color: white;
+            box-shadow: 0px 5px 10px lightgray;
+            &:hover{
+                $primary-color: lighten( #9356DC, 10);
+                $secondary-color: lighten( #FF79DA, 10);
+                background: linear-gradient(to bottom right, $secondary-color,$primary-color);
+            }
         }
     }
 

@@ -10,13 +10,28 @@ body{
 
 
 .Logo img{
-    height: 30px;
+    height: 30px;  
 }
 
+
+
 header{
-    @include center(column);
     background-color: white;
     padding-bottom: 10px;
+    @include align;
+    justify-content: center;
+    align-items:center;
+}
+
+a:active{
+    color: black;
+}
+    
+
+
+.Arrow{
+    position: relative;
+    right: 20%;
 }
 
 .SearchPart{
@@ -53,7 +68,7 @@ header{
                 $primary-color: lighten( #9356DC, 10);
                 $secondary-color: lighten( #FF79DA, 10);
                 background: linear-gradient(to bottom right, $secondary-color,$primary-color);
-                box-shadow: 0px 7px 12px grey;
+                box-shadow: 0px 5px 10px grey;
 
             }
             

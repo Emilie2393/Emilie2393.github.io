@@ -1,4 +1,3 @@
-@charset "UTF-8";
 body {
   font-family: "Roboto", sans-serif;
   margin: 0;
@@ -6,6 +5,82 @@ body {
   width: auto;
 }
 
+.Page {
+  position: relative;
+  animation: opac 1s;
+}
+
+.Loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  opacity: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  animation: reverseopac 1s;
+}
+.Loading__Anim {
+  align-items: center;
+  display: flex;
+  width: 40%;
+  height: 20px;
+  border: solid grey 2px;
+  padding: 2px;
+}
+.Loading__Anim__Progress {
+  background-color: #9356DC;
+  height: 15px;
+  width: 100%;
+  animation: anim 1s;
+  transform-origin: 0% 50%;
+}
+
+@keyframes opac {
+  0% {
+    opacity: 0;
+  }
+  99% {
+    opacity: 0.01;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes reverseopac {
+  0% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 0.01;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes anim {
+  0% {
+    transform: scaleX(0);
+  }
+  17% {
+    transform: scaleX(0.17);
+  }
+  40% {
+    transform: scaleX(0.7);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+@keyframes anim2 {
+  0% {
+    transform: scaleY(0);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
 .Logo img {
   height: 30px;
 }
@@ -77,10 +152,25 @@ a:active {
   border-radius: 18px;
   color: white;
   box-shadow: 0px 5px 10px lightgray;
+  z-index: 1;
+  position: relative;
+  cursor: pointer;
 }
-.SearchPart__Hook__Explore:hover {
+.SearchPart__Hook__Explore:hover .SearchPart__Hook__Explore__Op {
+  opacity: 1;
+}
+.SearchPart__Hook__Explore__Op {
+  border-radius: 18px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   background: linear-gradient(to bottom right, #fface8, #ae80e5);
   box-shadow: 0px 5px 10px grey;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 250ms;
 }
 
 h2 {
@@ -199,12 +289,31 @@ h2 {
   margin: 0 0 10px 10px;
 }
 .ResultsPart__Cards__Icon {
-  color: grey;
   font-size: 1.3em;
-  position: relative;
+  position: absolute;
+  z-index: 1;
   text-align: right;
   right: 20px;
   top: 20%;
+}
+.ResultsPart__Cards__Icon:hover > i {
+  transform: scaleY(1);
+}
+.ResultsPart__Cards__Icon i {
+  background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform: scaleY(0);
+  transition: transform 1s;
+}
+.ResultsPart__Cards__Icon2 {
+  font-size: 1.3em;
+  position: absolute;
+  text-align: right;
+  right: 20px;
+  top: 20%;
+  background-color: white;
+  color: grey;
 }
 .ResultsPart__Cards__New {
   position: absolute;
@@ -213,9 +322,22 @@ h2 {
   right: 20px;
   top: 20px;
   font-size: 0.9em;
+  z-index: 1;
 }
-.ResultsPart__Cards__New:hover {
+.ResultsPart__Cards__New:hover .ResultsPart__Cards__New__Op {
+  opacity: 1;
+}
+.ResultsPart__Cards__New__Op {
+  position: absolute;
+  padding: 6px 14px 6px 14px;
   background-color: #c1ede2;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 250ms;
 }
 .ResultsPart__Cards__Column {
   display: flex;
@@ -223,6 +345,7 @@ h2 {
 }
 .ResultsPart__Cards__Column__Right {
   width: 50%;
+  position: relative;
 }
 .ResultsPart__Cards__Column__Left {
   width: 50%;
@@ -258,8 +381,11 @@ footer {
   font-size: 0.8em;
   width: 25px;
 }
+.FooterPart__Text {
+  cursor: pointer;
+}
 
-/* Page 1 - La palette du Goût ----------------------------------------------------------------------------    */
+/* Pages annexes ----------------------------------------------------------------------------    */
 body {
   background-color: rgb(246, 246, 246);
 }
@@ -272,33 +398,30 @@ body {
 
 .Column {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   width: 100%;
   height: 100%;
   align-items: center;
 }
-.Column:hover > .Right {
-  transform: translate(-40px);
-}
 .Column:hover > .Right > .Menu__Dishes__Cards__Icone {
-  opacity: 1;
-  background-color: #99E2D0;
-  color: white;
+  width: 20px;
+  padding: 20px 23px 15px 23px;
+}
+.Column:hover > .Right > .Menu__Dishes__Cards__Icone > i {
+  transform: rotate(0deg);
 }
 
 .Right {
-  width: 20%;
   height: 100%;
   display: flex;
   justify-content: end;
   background-color: white;
-  transform: translate(0);
-  transition: transform 1s;
 }
 
 .Left {
-  width: 80%;
+  width: 20px;
   height: 100%;
+  flex-grow: 1;
 }
 
 .Menu {
@@ -349,27 +472,36 @@ body {
 .Menu__Dishes__Cards__Name {
   font-weight: bold;
   padding-left: 10px;
-}
-.Menu__Dishes__Cards__Details {
-  font-size: 0.9em;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+.Menu__Dishes__Cards__Details {
+  font-size: 0.9em;
   padding-left: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .Menu__Dishes__Cards__Price {
+  width: 40px;
   font-weight: bold;
   margin: 30px 0 0 0;
-  position: relative;
-  right: -30px;
+  transform: translate(0);
+  transition: 800ms;
 }
 .Menu__Dishes__Cards__Icone {
-  padding: 23px 25px 17px 23px;
-  position: relative;
-  right: -40px;
-  transform: translate(0);
+  width: 0;
+  transition: 800ms;
+  cursor: pointer;
+  padding: 20px 0 15px 0;
+  background-color: #99E2D0;
+}
+.Menu__Dishes__Cards__Icone i {
+  transform: rotate(-360deg);
   transition: transform 1s;
-  opacity: 0;
+  font-size: 1.3em;
+  color: white;
 }
 .Menu__Command {
   margin: 20px 0 30px 0;
@@ -378,9 +510,26 @@ body {
   border-radius: 18px;
   color: white;
   box-shadow: 0px 5px 10px lightgray;
+  z-index: 1;
+  position: relative;
+  cursor: pointer;
 }
-.Menu__Command:hover {
+.Menu__Command:hover .Menu__Command__Op {
+  opacity: 1;
+}
+.Menu__Command__Op {
+  border-radius: 18px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   background: linear-gradient(to bottom right, #fface8, #ae80e5);
+  box-shadow: 0px 5px 10px grey;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 250ms;
+  box-shadow: 0px 5px 10px grey;
 }
 
 /*# sourceMappingURL=style.css.map */

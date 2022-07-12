@@ -8,6 +8,98 @@ body{
     width: auto;
 }
 
+.Page{
+    position: relative;
+    animation: opac 1s;
+}
+
+.Loading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    opacity: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    animation: reverseopac 1s;
+
+    &__Anim{
+        align-items: center;
+        display: flex;
+        width: 40%;
+        height: 20px;
+        border: solid grey 2px;
+        padding: 2px;
+        &__Progress{
+            background-color: $primary-color;
+            height: 15px;
+            width: 100%;
+            animation: anim 1s;
+            transform-origin: 0% 50%;
+        }
+}
+}
+
+@keyframes opac{
+    0%{
+        opacity:0;
+    }
+
+    99%{
+        opacity:0.01;
+    }
+
+
+    100%{
+        opacity:1;
+    }
+}
+
+@keyframes reverseopac{
+    0%{
+        opacity:1;
+    }
+
+    99%{
+        opacity:0.01;
+    }
+
+
+    100%{
+        opacity:0;
+    }
+}
+
+@keyframes anim{
+    0%{
+        transform: scaleX(0);
+    }
+
+    17%{
+        transform: scaleX(.17);
+    }
+
+    40%{
+        transform: scaleX(.70);
+    }
+
+    100%{
+        transform: scaleX(1);
+    }
+}
+
+@keyframes anim2{
+    0%{
+        transform: scaleY(0);
+    }
+
+
+    100%{
+        transform: scaleY(1);
+    }
+}
+
 
 .Logo img{
     height: 30px;  
@@ -59,17 +151,34 @@ a:active{
         }
         &__Explore{
             margin: 20px 0 30px 0;
-            background: linear-gradient(to bottom right, $secondary-color,$primary-color);
+            background: $linear-color;
             padding: 8px 15px 10px 15px;
             border-radius: 18px;
             color: white;
             box-shadow: 0px 5px 10px lightgray;
+            z-index:1;
+            position: relative;
+            cursor: pointer;
             &:hover{
+                & .SearchPart__Hook__Explore__Op{
+                    opacity: 1;
+                }
+
+            }
+            &__Op{
+                border-radius: 18px;
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
                 $primary-color: lighten( #9356DC, 10);
                 $secondary-color: lighten( #FF79DA, 10);
                 background: linear-gradient(to bottom right, $secondary-color,$primary-color);
                 box-shadow: 0px 5px 10px grey;
-
+                opacity: 0;
+                z-index: -1;
+                transition: opacity 250ms;
             }
             
         }
@@ -164,13 +273,39 @@ h2{
             
         }
         &__Icon{
-            color:grey;
+            
             font-size: 1.3em;
-            position: relative;
+            position: absolute;
+            z-index: 1;
             text-align: right;
             right: 20px;
             top: 20%; 
-        }   
+            &:hover > i{
+                transform: scaleY(1);
+            }
+            
+            & i{
+                background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
+	            -webkit-background-clip: text;
+	            -webkit-text-fill-color: transparent;
+                transform: scaleY(0);
+                transition: transform 1s;
+                
+                
+            }
+            
+        }
+
+        &__Icon2{
+            font-size: 1.3em;
+            position: absolute;
+            text-align: right;
+            right: 20px;
+            top: 20%; 
+            background-color: white;
+            color: grey;
+        }
+
         &__New{
             position: absolute;
             background-color: $new-color;
@@ -178,9 +313,24 @@ h2{
             right: 20px;
             top:20px;
             font-size: 0.9em;
+            z-index: 1;
             &:hover{
-                $new-color: lighten($new-color, 10);
-                background-color: $new-color;
+                & .ResultsPart__Cards__New__Op{
+                    opacity: 1;
+                }
+            }
+            &__Op{
+                position: absolute;
+                padding: 6px 14px 6px 14px;
+                background-color: lighten($new-color, 10);
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                opacity: 0;
+                z-index: -1;
+                transition: opacity 250ms;
+
             }
         }
 
@@ -189,6 +339,7 @@ h2{
             flex-wrap: wrap;
             &__Right{
                 width: 50%;
+                position: relative;
             }
             &__Left{
                 width: 50%;
@@ -229,10 +380,13 @@ footer{
         font-size: 0.8em;
         width: 25px;  
     }
+    &__Text{
+        cursor: pointer;
+    }
     
 }
 
-/* Page 1 - La palette du Goût ----------------------------------------------------------------------------    */
+/* Pages annexes ----------------------------------------------------------------------------    */
 
 body{
     background-color: $back-color;
@@ -246,17 +400,19 @@ body{
 }
 
 .Column{
-    @include align;
+    display: flex;
+    flex-wrap: nowrap;
     width: 100%;
     height: 100%;
     align-items: center;
     &:hover >.Right{
-        transform: translate(-40px);
-        
-        >.Menu__Dishes__Cards__Icone{
-            opacity: 1;
-            background-color: $third-color;
-            color: white;
+        & >.Menu__Dishes__Cards__Icone{
+            width: 20px;
+            padding: 20px 23px 15px 23px;
+            & > i{
+                transform:rotate(0deg);
+            }
+            
         }
     }
 
@@ -264,20 +420,17 @@ body{
 
 
 .Right{
-    width: 20%;
     height: 100%;
     display: flex;
     justify-content: end;
     background-color: white;
-    transform:translate(0);
-    transition: transform 1s;
     
 }
 
 .Left{
-    width: 80%;
+    width: 20px;
     height: 100%;
-    
+    flex-grow: 1;
     
 }
 
@@ -322,33 +475,44 @@ body{
             margin-bottom: 15px;
             width: 100%;
             display: flex;  
-            overflow: hidden;        
+            overflow: hidden;    
         
             &__Name{
                 font-weight: bold;
                 padding-left: 10px;
-            }
-            &__Details{
-                font-size: 0.9em;
                 overflow: hidden;
                 text-overflow: ellipsis;
                 white-space: nowrap;
+    
+            }
+            &__Details{
+                font-size: 0.9em;
                 padding-left: 10px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+
             }
             &__Price{
+                width: 40px;
                 font-weight: bold;
                 margin: 30px 0 0 0;
-                position: relative;
-                right: -30px;
-                
+                transform: translate(0);
+                transition: 800ms;
+       
             }
             &__Icone {
-                padding: 23px 25px 17px 23px;
-                position: relative;
-                right: -40px;
-                transform:translate(0);
-                transition: transform 1s;
-                opacity: 0;
+                width: 0;
+                transition: 800ms;
+                cursor: pointer;
+                padding: 20px 0 15px 0;
+                background-color: $third-color;
+                & i{
+                    transform:rotate(-360deg);
+                    transition: transform 1s;
+                    font-size: 1.3em;
+                    color: white;
+                }
 
             }
             
@@ -361,12 +525,35 @@ body{
             border-radius: 18px;
             color: white;
             box-shadow: 0px 5px 10px lightgray;
+            z-index: 1;
+            position: relative;
+            cursor: pointer;
             &:hover{
+                & .Menu__Command__Op{
+                    opacity: 1;
+                }
+
+            }
+            &__Op{
+                border-radius: 18px;
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
                 $primary-color: lighten( #9356DC, 10);
                 $secondary-color: lighten( #FF79DA, 10);
                 background: linear-gradient(to bottom right, $secondary-color,$primary-color);
+                box-shadow: 0px 5px 10px grey;
+                opacity: 0;
+                z-index: -1;
+                transition: opacity 250ms;
+                box-shadow: 0px 5px 10px grey;
             }
+
         }
     }
+
+
 
 

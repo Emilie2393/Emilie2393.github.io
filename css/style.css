@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   font-family: "Roboto", sans-serif;
   margin: 0;
@@ -554,6 +555,45 @@ body {
   z-index: -1;
   transition: opacity 250ms;
   box-shadow: 0px 5px 10px grey;
+}
+
+/* Partie grand écran ----------------------------------------------------------------------------    */
+@media all and (min-width: 992px) {
+  .Flex {
+    flex-direction: row;
+  }
+  .ResultsPart__Cards {
+    width: 45%;
+    flex-grow: 0;
+  }
+  .ExplainPart__Center {
+    width: 100%;
+  }
+  .ExplainPart__Center {
+    width: 80%;
+    justify-content: left;
+    margin: auto;
+    margin-bottom: 15px;
+  }
+  .ExplainPart__Center + .ExplainPart__Center {
+    justify-content: center;
+  }
+  .ExplainPart__Center + .ExplainPart__Center + .ExplainPart__Center {
+    justify-content: right;
+  }
+}
+/* Partie tablette ----------------------------------------------------------------------------    */
+@media all and (min-width: 769px) and (max-width: 992px) {
+  .Flex {
+    flex-direction: row;
+  }
+  .ResultsPart__Cards {
+    width: 45%;
+    flex-grow: 0;
+  }
+  .ExplainPart__Center {
+    width: 100%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

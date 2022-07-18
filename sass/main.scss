@@ -583,6 +583,55 @@ body{
         }
     }
 
+/* Partie grand écran ----------------------------------------------------------------------------    */
+
+    @media all and (min-width:992px) {
+    
+        .Flex{
+            flex-direction: row;
+        }
+
+        .ResultsPart__Cards{
+            width: 45%;
+            flex-grow: 0;
+        }
+        
+        .ExplainPart__Center{
+            width: 100%;
+        }
+
+        .ExplainPart__Center{
+            width: 80%;
+            justify-content: left;
+            margin: auto;
+            margin-bottom: 15px;
+            +.ExplainPart__Center{
+                justify-content: center;
+                +.ExplainPart__Center{
+                    justify-content: right;
+                }
+            }
+        }
+
+    }
+
+/* Partie tablette ----------------------------------------------------------------------------    */
+
+    @media all and (min-width:769px) and (max-width: 992px){
+        .Flex{
+            flex-direction: row;
+        }
+
+        .ResultsPart__Cards{
+            width: 45%;
+            flex-grow: 0;
+        }
+
+        .ExplainPart__Center{
+            width: 100%;
+        }
+    }
+
 
 
 

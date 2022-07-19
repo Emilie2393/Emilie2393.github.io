@@ -9,7 +9,7 @@ body {
 .Page {
   position: relative;
   opacity: 0;
-  animation: 1s 3s opac;
+  animation: 1s 4s opac;
   animation-fill-mode: forwards;
 }
 
@@ -22,7 +22,7 @@ body {
   width: 100%;
   height: 100vh;
   background-color: white;
-  animation: reverseopac 4s;
+  animation: reverse opac 4s;
 }
 .Loading__Anim {
   align-items: center;
@@ -36,7 +36,7 @@ body {
   background-color: #9356DC;
   height: 15px;
   width: 100%;
-  animation: anim 1s;
+  animation: anim 2s;
   transform-origin: 0% 50%;
 }
 
@@ -49,28 +49,6 @@ body {
   }
   100% {
     opacity: 1;
-  }
-}
-@keyframes appear {
-  0% {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  60% {
-    opacity: 0.8;
-    transform: translateY(2px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0px);
-  }
-}
-@keyframes reverseopac {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
   }
 }
 @keyframes anim {
@@ -87,12 +65,18 @@ body {
     transform: scaleX(1);
   }
 }
-@keyframes anim2 {
+@keyframes appear {
   0% {
-    transform: scaleY(0);
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  60% {
+    opacity: 0.8;
+    transform: translateY(2px);
   }
   100% {
-    transform: scaleY(1);
+    opacity: 1;
+    transform: translateY(0px);
   }
 }
 .Logo img {
@@ -497,7 +481,6 @@ body {
   line-height: 20px;
   margin-bottom: 15px;
   width: 100%;
-  display: flex;
   overflow: hidden;
 }
 .Menu__Dishes__Cards__Name {
@@ -517,7 +500,7 @@ body {
 .Menu__Dishes__Cards__Price {
   width: 40px;
   font-weight: bold;
-  margin: 30px 0 0 0;
+  margin: 30px 5px 3px 0;
   transform: translate(0);
   transition: 800ms;
 }
@@ -535,9 +518,9 @@ body {
   color: white;
 }
 .Menu__Command {
-  margin: 20px 0 30px 0;
+  margin: 30px 0 30px 0;
   background: linear-gradient(to bottom right, #FF79DA, #9356DC);
-  padding: 8px 15px 10px 15px;
+  padding: 8px 35px 10px 35px;
   border-radius: 18px;
   color: white;
   box-shadow: 0px 5px 10px lightgray;
@@ -587,6 +570,15 @@ body {
   .ExplainPart__Center + .ExplainPart__Center + .ExplainPart__Center {
     justify-content: right;
   }
+  .Flex2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .Menu__Dishes__Cards {
+    width: 49%;
+  }
 }
 /* Partie tablette ----------------------------------------------------------------------------    */
 @media all and (min-width: 769px) and (max-width: 992px) {
@@ -599,6 +591,15 @@ body {
   }
   .ExplainPart__Center {
     width: 100%;
+  }
+  .Flex2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .Menu__Dishes__Cards {
+    width: 49%;
   }
 }
 

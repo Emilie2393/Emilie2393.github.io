@@ -304,6 +304,7 @@ a:active {
 .ResultsPart__Cards__Icon i {
   background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   transform: scaleY(0);
   transition: transform 1s;
@@ -448,8 +449,30 @@ body {
   align-items: center;
   justify-content: space-between;
 }
-.Menu__Title i {
-  margin-right: 15px;
+.Menu__Title__Icone {
+  position: absolute;
+  z-index: 1;
+  text-align: right;
+  right: 10px;
+  cursor: pointer;
+}
+.Menu__Title__Icone:hover > i {
+  transform: scaleY(1);
+}
+.Menu__Title__Icone i {
+  background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform: scaleY(0);
+  transition: transform 1s;
+}
+.Menu__Title__Icone2 {
+  position: absolute;
+  text-align: right;
+  background-color: rgb(246, 246, 246);
+  color: grey;
+  right: 10px;
 }
 .Menu__Dishes {
   width: 95%;
@@ -556,9 +579,6 @@ body {
     flex-grow: 0;
   }
   .ExplainPart__Center {
-    width: 100%;
-  }
-  .ExplainPart__Center {
     width: 80%;
     justify-content: left;
     margin: auto;
@@ -600,6 +620,17 @@ body {
   }
   .Menu__Dishes__Cards {
     width: 49%;
+  }
+  .Menu__Title {
+    flex-direction: column;
+  }
+  .Menu__Title__Icone {
+    top: 50px;
+    right: 50%;
+  }
+  .Menu__Title__Icone2 {
+    top: 50px;
+    right: 50%;
   }
 }
 

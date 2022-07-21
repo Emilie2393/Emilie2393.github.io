@@ -1,21 +1,21 @@
 @use "abstract" as *;
 
 
-body{
+body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     box-sizing: border-box;
     width: auto;
 }
 
-.Page{
+.Page {
     position: relative;
     opacity: 0;
     animation: 1s 4s opac;
     animation-fill-mode: forwards;
 }
 
-.Loading{
+.Loading {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,281 +25,311 @@ body{
     height: 100vh;
     background-color: white;
     animation: reverse opac 4s;
-    &__Anim{
+
+    &__Anim {
         align-items: center;
         display: flex;
         width: 40%;
         height: 20px;
         border: solid grey 2px;
         padding: 2px;
-        &__Progress{
+
+        &__Progress {
             background-color: $primary-color;
             height: 15px;
             width: 100%;
             animation: anim 2s;
             transform-origin: 0% 50%;
         }
-}
-}
-
-@keyframes opac{
-    0%{
-        opacity:0;
-    }
-    90%{
-        opacity:0.8;
-    }
-    100%{
-        opacity:1;
     }
 }
 
-@keyframes anim{
-    0%{
+@keyframes opac {
+    0% {
+        opacity: 0;
+    }
+
+    90% {
+        opacity: 0.8;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes anim {
+    0% {
         transform: scaleX(0);
     }
-    17%{
+
+    17% {
         transform: scaleX(.17);
     }
-    40%{
+
+    40% {
         transform: scaleX(.70);
     }
-    100%{
+
+    100% {
         transform: scaleX(1);
     }
 }
 
-@keyframes appear{
-    0%{
-        opacity:0;
+@keyframes appear {
+    0% {
+        opacity: 0;
         transform: translateY(10px);
     }
-    60%{
-        opacity:0.8;
+
+    60% {
+        opacity: 0.8;
         transform: translateY(2px);
     }
-    100%{
-        opacity:1;
+
+    100% {
+        opacity: 1;
         transform: translateY(0px);
     }
 }
 
-.Logo img{
-    height: 30px;  
+.Logo img {
+    height: 30px;
 }
 
-h2{
+h2 {
     margin: 0 0 15px 20px;
     padding-top: 40px;
 
 }
 
-header{
+header {
     background-color: white;
     padding-bottom: 10px;
     @include align;
     justify-content: center;
-    align-items:center;
+    align-items: center;
 }
 
-a:active{
+a:active {
     color: black;
 }
-    
-.Arrow{
+
+.Arrow {
     position: relative;
     right: 20%;
 }
 
-.Flex{
+.Flex {
     @include center(column);
 }
 
 
-.SearchPart{
+.SearchPart {
     @include center(column);
-    &__Localisation{
+
+    &__Localisation {
         @include center(row);
         padding: 10px 0 10px 0;
         border-top: solid 2px lightgrey;
         background-color: $search-color;
-        
-        &__Paris{
+
+        &__Paris {
             margin-left: 10px;
-            font-weight:500;
+            font-weight: 500;
         }
     }
-    &__Hook{
+
+    &__Hook {
         @include center(column);
         background-color: $back-color;
         margin-bottom: 10px;
-        h1{
+
+        h1 {
             margin: 20px 50px 10px 50px;
         }
-        &__Text{
+
+        &__Text {
             margin: 0 50px 0 50px;
         }
-        &__Explore{
+
+        &__Explore {
             margin: 20px 0 30px 0;
             background: $linear-color;
             padding: 8px 15px 10px 15px;
             border-radius: 18px;
             color: white;
             box-shadow: 0px 5px 10px lightgray;
-            z-index:1;
+            z-index: 1;
             position: relative;
             cursor: pointer;
-            &:hover{
-                & .SearchPart__Hook__Explore__Op{
+
+            &:hover {
+                & .SearchPart__Hook__Explore__Op {
                     opacity: 1;
                 }
             }
-            &__Op{
+
+            &__Op {
                 border-radius: 18px;
                 position: absolute;
                 top: 0;
                 right: 0;
                 bottom: 0;
                 left: 0;
-                $primary-color: lighten( #9356DC, 10);
-                $secondary-color: lighten( #FF79DA, 10);
-                background: linear-gradient(to bottom right, $secondary-color,$primary-color);
+                $primary-color: lighten(#9356DC, 10);
+                $secondary-color: lighten(#FF79DA, 10);
+                background: linear-gradient(to bottom right, $secondary-color, $primary-color);
                 box-shadow: 0px 5px 10px grey;
                 opacity: 0;
                 z-index: -1;
                 transition: opacity 250ms;
             }
-            
+
         }
     }
 
 }
 
-.ExplainPart{
+.ExplainPart {
     background-color: white;
     padding-bottom: 40px;
-    
-    &__Center{
+
+    &__Center {
         @include center(row);
         margin-bottom: 15px;
     }
-    &__Number{
+
+    &__Number {
         background-color: $primary-color;
-        position:relative;
+        position: relative;
         left: 13px;
         padding: 2px 8px 2px 7px;
         border-radius: 50%;
         color: white;
     }
-    &__Cards{
+
+    &__Cards {
         @include center(row);
         @include Button;
-        width:75%;
+        width: 75%;
         margin-right: 15px;
         background-color: $back-color;
-        justify-content:flex-start;
+        justify-content: flex-start;
         height: 35px;
-        i{
+
+        i {
             margin: 0 26px 0 11px;
             color: grey;
         }
-        &3{
+
+        &3 {
             @include center(row);
             @include Button;
-            width:75%;
+            width: 75%;
             margin-right: 15px;
             background-color: $select-color;
-            justify-content:flex-start;
+            justify-content: flex-start;
             height: 35px;
-            i{
+
+            i {
                 margin: 0 26px 0 11px;
                 color: $primary-color;
 
+            }
+
         }
-        
     }
 }
-}
 
-.ResultsPart{
+.ResultsPart {
     background-color: $back-color;
-    & a{
+
+    & a {
         text-decoration: none;
         color: black;
     }
-    
-    &__Cards{
+
+    &__Cards {
         @include Center_Cards;
         text-align: left;
-        &__Image{
+
+        &__Image {
             position: relative;
             height: 200px;
             overflow: hidden;
         }
-        & img{
+
+        & img {
             width: 100%;
             height: 200px;
             object-fit: cover;
             object-position: 0% 65%;
-            position: absolute;  
+            position: absolute;
         }
-        
-        &__Name{
+
+        &__Name {
             font-weight: bold;
-            margin: 10px 0 0 10px;  
+            margin: 10px 0 0 10px;
         }
-        &__Location{
+
+        &__Location {
             margin: 0 0 10px 10px;
-            
+
         }
-        &__Icon{
-            
+
+        &__Icon {
+
             font-size: 1.3em;
             position: absolute;
             z-index: 1;
             text-align: right;
             right: 20px;
-            top: 20%; 
-            &:hover > i{
+            top: 20%;
+
+            &:hover>i {
                 transform: scaleY(1);
             }
-            
-            & i{
+
+            & i {
                 background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
-	            -webkit-background-clip: text;
-	            -webkit-text-fill-color: transparent;
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
                 transform: scaleY(0);
                 transition: transform 1s;
-                
-                
+
+
             }
-            
+
         }
 
-        &__Icon2{
+        &__Icon2 {
             font-size: 1.3em;
             position: absolute;
             text-align: right;
             right: 20px;
-            top: 20%; 
+            top: 20%;
             background-color: white;
             color: grey;
         }
 
-        &__New{
+        &__New {
             position: absolute;
             background-color: $new-color;
             padding: 6px 14px 6px 14px;
             right: 20px;
-            top:20px;
+            top: 20px;
             font-size: 0.9em;
             z-index: 1;
-            &:hover{
-                & .ResultsPart__Cards__New__Op{
+
+            &:hover {
+                & .ResultsPart__Cards__New__Op {
                     opacity: 1;
                 }
             }
-            &__Op{
+
+            &__Op {
                 position: absolute;
                 padding: 6px 14px 6px 14px;
                 background-color: lighten($new-color, 10);
@@ -314,101 +344,109 @@ a:active{
             }
         }
 
-        &__Column{
+        &__Column {
             display: flex;
             flex-wrap: wrap;
-            &__Right{
+
+            &__Right {
                 width: 50%;
                 position: relative;
             }
-            &__Left{
+
+            &__Left {
                 width: 50%;
             }
         }
     }
 }
 
-.FooterPart{
+.FooterPart {
     color: white;
     padding: 5px 0px 15px 20px;
     display: flex;
     flex-direction: column;
     row-gap: 6px;
-    &__Align{
+
+    &__Align {
         @include align;
         align-items: center;
-        
+
     }
-    &__Icon1{
+
+    &__Icon1 {
         width: 25px;
     }
-    
-    &__Icon2{
+
+    &__Icon2 {
         font-size: 0.8em;
-        width: 25px;  
+        width: 25px;
     }
-    &__Text{
-        color:white;
+
+    &__Text {
+        color: white;
         text-decoration: none;
         cursor: pointer;
     }
-    
+
 }
 
-footer{
+footer {
     background-color: $footer-color;
 }
-.Logo__Footer{
-    font-family:'Shrikhand', cursive;
+
+.Logo__Footer {
+    font-family: 'Shrikhand', cursive;
     padding: 15px 0 10px 20px;
     color: white;
     font-size: 1.2em;
-    }
-    
+}
+
 /* Pages annexes ----------------------------------------------------------------------------    */
 
-body{
+body {
     background-color: $back-color;
 }
 
-.Image img{
+.Image img {
     height: 300px;
     width: 100%;
     object-fit: cover;
 }
 
-.Column{
+.Column {
     display: flex;
     flex-wrap: nowrap;
     width: 100%;
     height: 100%;
     align-items: center;
-    &:hover >.Right{
-        & >.Menu__Dishes__Cards__Icone{
+
+    &:hover>.Right {
+        &>.Menu__Dishes__Cards__Icone {
             width: 20px;
             padding: 20px 23px 15px 23px;
-            & > i{
-                transform:rotate(0deg);
-            }   
+
+            &>i {
+                transform: rotate(0deg);
+            }
         }
     }
-    }
+}
 
 
-.Right{
+.Right {
     height: 100%;
     display: flex;
     justify-content: end;
     background-color: white;
 }
 
-.Left{
+.Left {
     width: 20px;
     height: 100%;
-    flex-grow: 1; 
+    flex-grow: 1;
 }
 
-.Menu{
+.Menu {
     background-color: $back-color;
     border-radius: 30px 30px 0 0;
     padding-top: 20px;
@@ -416,8 +454,9 @@ body{
     bottom: 50px;
     @include align;
     justify-content: center;
-    &__Title{
-        font-family:'Shrikhand', cursive;
+
+    &__Title {
+        font-family: 'Shrikhand', cursive;
         font-size: 1.5em;
         width: 95%;
         margin: auto;
@@ -425,27 +464,55 @@ body{
         display: flex;
         align-items: center;
         justify-content: space-between;
-        & i{
-           margin-right: 15px;
+
+
+        &__Icone {
+            position: absolute;
+            z-index: 1;
+            text-align: right;
+            right: 10px;
+            cursor: pointer;
+            &:hover>i {
+                transform: scaleY(1);
+            }
+            & i {
+                background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+                transform: scaleY(0);
+                transition: transform 1s;
+            }
+        }
+
+        &__Icone2 {
+            position: absolute;
+            text-align: right;
+            background-color: $back-color;
+            color: grey;
+            right: 10px;
         }
     }
-    &__Dishes{
+
+    &__Dishes {
         width: 95%;
         margin: auto;
         animation: 1s ease-in appear;
-        +.Menu__Dishes{
+
+        +.Menu__Dishes {
             opacity: 0;
             animation: 1s ease-in 1s appear;
             animation-fill-mode: forwards;
-            +.Menu__Dishes{
+
+            +.Menu__Dishes {
                 opacity: 0;
                 animation: 1s ease-in 2s appear;
                 animation-fill-mode: forwards;
             }
         }
 
-        
-        &__Subtitles{
+
+        &__Subtitles {
             margin: 0;
             margin-bottom: 15px;
             padding-bottom: 5px;
@@ -454,23 +521,25 @@ body{
             width: 40px;
             border-bottom: 3px $third-color solid;
         }
-        &__Cards{
+
+        &__Cards {
             background-color: white;
             border-radius: 15px;
             line-height: 20px;
             margin-bottom: 15px;
             width: 100%;
-            overflow: hidden;    
-        
-            &__Name{
+            overflow: hidden;
+
+            &__Name {
                 font-weight: bold;
                 padding-left: 10px;
                 overflow: hidden;
                 text-overflow: ellipsis;
                 white-space: nowrap;
-    
+
             }
-            &__Details{
+
+            &__Details {
                 font-size: 0.9em;
                 padding-left: 10px;
                 overflow: hidden;
@@ -478,138 +547,150 @@ body{
                 white-space: nowrap;
 
             }
-            &__Price{
+
+            &__Price {
                 width: 40px;
                 font-weight: bold;
                 margin: 30px 5px 3px 0;
                 transform: translate(0);
                 transition: 800ms;
-       
+
             }
+
             &__Icone {
                 width: 0;
                 transition: 800ms;
                 cursor: pointer;
                 padding: 20px 0 15px 0;
                 background-color: $third-color;
-                & i{
-                    transform:rotate(-360deg);
+
+                & i {
+                    transform: rotate(-360deg);
                     transition: transform 1s;
                     font-size: 1.3em;
                     color: white;
                 }
 
             }
-            
-        }
-        }
-        &__Command{
-            margin: 30px 0 30px 0;
-            background: linear-gradient(to bottom right, $secondary-color,$primary-color);
-            padding: 8px 35px 10px 35px;
-            border-radius: 18px;
-            color: white;
-            box-shadow: 0px 5px 10px lightgray;
-            z-index: 1;
-            position: relative;
-            cursor: pointer;
-            &:hover{
-                & .Menu__Command__Op{
-                    opacity: 1;
-                }
-
-            }
-            &__Op{
-                border-radius: 18px;
-                position: absolute;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                left: 0;
-                $primary-color: lighten( #9356DC, 10);
-                $secondary-color: lighten( #FF79DA, 10);
-                background: linear-gradient(to bottom right, $secondary-color,$primary-color);
-                box-shadow: 0px 5px 10px grey;
-                opacity: 0;
-                z-index: -1;
-                transition: opacity 250ms;
-                box-shadow: 0px 5px 10px grey;
-            }
 
         }
     }
+
+    &__Command {
+        margin: 30px 0 30px 0;
+        background: linear-gradient(to bottom right, $secondary-color, $primary-color);
+        padding: 8px 35px 10px 35px;
+        border-radius: 18px;
+        color: white;
+        box-shadow: 0px 5px 10px lightgray;
+        z-index: 1;
+        position: relative;
+        cursor: pointer;
+
+        &:hover {
+            & .Menu__Command__Op {
+                opacity: 1;
+            }
+
+        }
+
+        &__Op {
+            border-radius: 18px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            $primary-color: lighten(#9356DC, 10);
+            $secondary-color: lighten(#FF79DA, 10);
+            background: linear-gradient(to bottom right, $secondary-color, $primary-color);
+            box-shadow: 0px 5px 10px grey;
+            opacity: 0;
+            z-index: -1;
+            transition: opacity 250ms;
+            box-shadow: 0px 5px 10px grey;
+        }
+
+    }
+}
 
 /* Partie grand écran ----------------------------------------------------------------------------    */
 
-    @media all and (min-width:992px) {
-    
-        .Flex{
-            flex-direction: row;
-        }
+@media all and (min-width:992px) {
 
-        .ResultsPart__Cards{
-            width: 45%;
-            flex-grow: 0;
-        }
-        
-        .ExplainPart__Center{
-            width: 100%;
-        }
+    .Flex {
+        flex-direction: row;
+    }
 
-        .ExplainPart__Center{
-            width: 80%;
-            justify-content: left;
-            margin: auto;
-            margin-bottom: 15px;
-            +.ExplainPart__Center{
-                justify-content: center;
-                +.ExplainPart__Center{
-                    justify-content: right;
-                }
+    .ResultsPart__Cards {
+        width: 45%;
+        flex-grow: 0;
+    }
+
+    .ExplainPart__Center {
+        width: 80%;
+        justify-content: left;
+        margin: auto;
+        margin-bottom: 15px;
+
+        +.ExplainPart__Center {
+            justify-content: center;
+
+            +.ExplainPart__Center {
+                justify-content: right;
             }
         }
-
-        .Flex2{
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .Menu__Dishes__Cards{
-            width: 49%;
-        }
-
     }
+
+    .Flex2 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .Menu__Dishes__Cards {
+        width: 49%;
+    }
+
+}
 
 /* Partie tablette ----------------------------------------------------------------------------    */
 
-    @media all and (min-width:769px) and (max-width: 992px){
-        .Flex{
-            flex-direction: row;
-        }
-
-        .ResultsPart__Cards{
-            width: 45%;
-            flex-grow: 0;
-        }
-
-        .ExplainPart__Center{
-            width: 100%;
-        }
-
-        .Flex2{
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .Menu__Dishes__Cards{
-            width: 49%;
-        }
+@media all and (min-width:769px) and (max-width: 992px) {
+    .Flex {
+        flex-direction: row;
     }
 
+    .ResultsPart__Cards {
+        width: 45%;
+        flex-grow: 0;
+    }
 
+    .ExplainPart__Center {
+        width: 100%;
+    }
 
+    .Flex2 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
 
+    .Menu__Dishes__Cards {
+        width: 49%;
+    }
+
+    .Menu__Title {
+        flex-direction: column;
+        &__Icone{
+            top:50px;
+            right: 50%;
+        }
+        &__Icone2{
+            top:50px;
+            right: 50%;
+        }
+    }
+}
